@@ -5,18 +5,21 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationPageModule)
-
-  },  {
+  },
+  {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardPageModule)
   },
-
-  // other routes...
+  {
+    path: 'house',
+    loadChildren: () => import('./house/house.module').then(m => m.HousePageModule)
+  }
 ];
+
 
 @NgModule({
   imports: [

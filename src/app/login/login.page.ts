@@ -32,6 +32,8 @@ export class LoginPage implements OnInit {
       this.authService.login(formData).subscribe({
         next: (response) => {
           console.log('Login successful', response);
+          // Store the token in localStorage
+          this.authService.storeToken(response.token);
           // Redirect to the dashboard page after a successful login
           this.router.navigate(['/dashboard']);
         },

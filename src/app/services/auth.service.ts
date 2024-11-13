@@ -15,7 +15,17 @@ export class AuthService {
   }
 
 
-  login(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, data);
+  login(credentials: { email: string; password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, credentials);
+  }
+
+  // Method to store the token
+  storeToken(token: string): void {
+    localStorage.setItem('authToken', token);
+  }
+
+  // Method to retrieve the token
+  getToken(): string | null {
+    return localStorage.getItem('authToken');
   }
 }
