@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title class="ion-text-center">CLC Housing App</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <h2 class="ion-text-center">CLC Housing App</h2>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="button-container">
+    <!-- Register Button -->
+    <ion-button class="custom-width" color="primary" (click)="navigateToRegister()">
+      Register
+    </ion-button>
+
+    <!-- Login Button -->
+    <ion-button class="custom-width" color="secondary" (click)="navigateToLogin()">
+      Login
+    </ion-button>
   </div>
 </ion-content>
+
+

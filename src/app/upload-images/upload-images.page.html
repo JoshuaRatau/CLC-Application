@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Upload House Image</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h3 class="ion-text-center">Upload Multiple Images</h3>
+
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Image</ion-label>
+      <input type="file" (change)="onFileChange($event)" required />
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Description</ion-label>
+      <ion-input formControlName="description" type="text"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!uploadForm.valid">
+      Upload Image
+    </ion-button>
+
+    <!-- View Images button using houseId -->
+    <ion-button (click)="goToHouseImages()">View Images</ion-button>
+  </form>
+</ion-content>

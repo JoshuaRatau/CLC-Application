@@ -1,50 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Register</ion-title>
+    <ion-title class="ion-text-center">CLC Housing App</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2 class="ion-text-center">Registration</h2>
   <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
     
     <!-- Name Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Name</ion-label>
       <ion-input formControlName="name" type="text"></ion-input>
     </ion-item>
     
     <!-- Surname Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Surname</ion-label>
       <ion-input formControlName="surname" type="text"></ion-input>
     </ion-item>
     
     <!-- Phone Number Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Phone Number</ion-label>
       <ion-input formControlName="phoneNum" type="tel"></ion-input>
     </ion-item>
     
     <!-- Email Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Email</ion-label>
       <ion-input formControlName="email" type="email"></ion-input>
     </ion-item>
     
     <!-- Password Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Password</ion-label>
       <ion-input formControlName="password" type="password"></ion-input>
     </ion-item>
     
     <!-- Confirm Password Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Confirm Password</ion-label>
       <ion-input formControlName="confirmPassword" type="password"></ion-input>
     </ion-item>
 
     <!-- Register Button -->
-    <ion-button expand="full" type="submit" [disabled]="!registerForm.valid">Register</ion-button>
+    <div class="button-container">
+      <ion-button class="custom-width" type="submit" [disabled]="!registerForm.valid">Register</ion-button>
+    </div>
     
   </form>
 </ion-content>

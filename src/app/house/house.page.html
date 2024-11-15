@@ -1,23 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>User Houses</ion-title>
+    <ion-title class="ion-text-center">CLC Housing App</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h3>House Details</h3>
+  <h2 class="ion-text-center">House Details</h2>
   <ion-list *ngIf="houses.length > 0; else noHouses">
     <ion-item *ngFor="let house of houses">
       <ion-label>
-
-        <h5><strong>House Address:</strong>{{ house.address }}</h5>
-        <h5><strong>Description:</strong>{{ house.description }}</h5>
+        <h5><strong>House Address:</strong> {{ house.address }}</h5>
+        <h5><strong>Description:</strong> {{ house.description }}</h5>
         <h5><strong>Latitude:</strong> {{ house.latitude }}</h5>
         <h5><strong>Longitude:</strong> {{ house.longitude }}</h5>
       </ion-label>
 
-       <!-- Button to navigate to the Upload Images page -->
-    <ion-button expand="full" color="secondary" >Upload Images</ion-button>
+      <!-- Button to navigate to the Upload Images page -->
+      <ion-button (click)="goToUploadImages(house.id)">Upload Images</ion-button>
+
+      <!-- Delete button to delete the house -->
+      <ion-button color="danger" (click)="deleteHouse(house.id)">Delete House</ion-button>
+
+
+      <ion-button (click)="goToHouseImages(house.id)">View Images</ion-button>
+
     </ion-item>
   </ion-list>
 

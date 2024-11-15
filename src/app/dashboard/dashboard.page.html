@@ -1,34 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Add a House</ion-title>
+    <ion-title class="ion-text-center">CLC Housing App</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h2>Add a House</h2>
+  <h2 class="ion-text-center">Add A House</h2>
   <form [formGroup]="houseForm" (ngSubmit)="onAddHouse()">
-    <ion-item>
+    
+    <!-- Address Field -->
+    <ion-item class="form-item">
       <ion-label position="floating">Address</ion-label>
       <ion-input formControlName="address" type="text"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <!-- Description Field -->
+    <ion-item class="form-item">
       <ion-label position="floating">Description</ion-label>
       <ion-textarea formControlName="description"></ion-textarea>
     </ion-item>
 
-    <ion-item>
+    <!-- Latitude Field -->
+    <ion-item class="form-item">
       <ion-label position="floating">Latitude</ion-label>
       <ion-input formControlName="latitude" type="number"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <!-- Longitude Field -->
+    <ion-item class="form-item">
       <ion-label position="floating">Longitude</ion-label>
       <ion-input formControlName="longitude" type="number"></ion-input>
     </ion-item>
 
-    <ion-button expand="full" type="submit" [disabled]="!houseForm.valid">Add House</ion-button>
+    <!-- Add House Button -->
+    <div class="button-container">
+      <ion-button class="custom-width" type="submit" [disabled]="!houseForm.valid">Add House</ion-button>
+    </div>
+    
   </form>
 </ion-content>
-
-

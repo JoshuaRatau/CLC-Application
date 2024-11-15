@@ -1,25 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title class="ion-text-center">CLC Housing App</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2 class="ion-text-center">Login</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
     <!-- Email Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Email</ion-label>
       <ion-input formControlName="email" type="email"></ion-input>
     </ion-item>
 
     <!-- Password Field -->
-    <ion-item>
+    <ion-item class="form-item">
       <ion-label position="floating">Password</ion-label>
       <ion-input formControlName="password" type="password"></ion-input>
     </ion-item>
 
-    <!-- Login Button -->
-    <ion-button expand="full" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+    <div class="button-container">
+      <ion-button class="custom-width" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+    </div>
   </form>
 </ion-content>
-

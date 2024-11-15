@@ -29,5 +29,54 @@ export class HouseService {
     console.log('Adding house with data:', houseData);
     return this.http.post<any>(`${this.apiUrl}/houses`, houseData, { headers });
   }
+
+
+  // Method to upload a house image
+  uploadHouseImage(houseId: number, formData: FormData): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem('authToken')}`
+    });
+  
+    const url = `${this.apiUrl}/houses/${houseId}/images`;
+    console.log('Uploading image with form data:', formData);
+    return this.http.post(url, formData, { headers });
+  }
+  
+
+// Method to delete a house
+deleteHouse(houseId: number): Observable<any> {
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${localStorage.getItem('authToken')}`
+  });
+  return this.http.delete(`${this.apiUrl}/houses/${houseId}`, { headers });
 }
+
+
+getHouseImages(houseId: number): Observable<any> {
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${localStorage.getItem('authToken')}`
+  });
+  return this.http.get(`${this.apiUrl}/houses/${houseId}/images`, { headers });
+}
+
+
+
+
+deleteHouseImage(houseId: number, imageId: number): Observable<any> {
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${localStorage.getItem('authToken')}`
+  });
+
+  return this.http.delete<any>(`${this.apiUrl}/houses/${houseId}/images/${imageId}`, { headers });
+}
+
+
+
+
+
+}
+
+
+
+
 

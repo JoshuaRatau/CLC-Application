@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">CLC Housing App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h3 class="ion-text-center">House Images</h3>
+
+  <ion-list>
+    <ion-item *ngFor="let image of images">
+      <ion-thumbnail slot="start">
+        <img [src]="getImageUrl(image.image_path)" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ image.description }}</h2>
+      </ion-label>
+     <!-- Assuming each image item has access to `houseId` and `imageId` -->
+<ion-button color="danger" (click)="deleteImage(houseId, image.id)">Delete</ion-button>
+
+    </ion-item>
+  </ion-list>
+  
+  
+  
+
+  <ng-template #noImages>
+    <p>No images found for this house.</p>
+  </ng-template>
+</ion-content>
