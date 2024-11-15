@@ -8,4 +8,10 @@
 
    ### Clone the Repository
 
-1. git clone
+1. git clone https://github.com/JoshuaRatau/CLC-Application/tree/master
+
+2. cd CLC-Application
+
+3. npm install
+   
+4.Ionic Serve
